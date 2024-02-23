@@ -5,19 +5,17 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-
-@WebServlet("/second") // 서블릿 실행을 위한 URI를 "/second"로 설정
-public class SecondServlet extends HttpServlet {
-
+@WebServlet("/third")
+public class ThirdServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
 												 ServletException, IOException {
-		System.out.println("SecondServlet!!");
+		resp.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = resp.getWriter();
-		out.print("<html><head><title>Test</title></head>");
-		out.print("<body><h1>hava a nice day!!</h1></body>");
-		out.print("</html>");
+		out.print("<h1>좋은 하루!</h1>");
 		out.close();
+		
+		
+		
 	}
-	
 }
